@@ -29,6 +29,17 @@ void TestSharedPtr2()
 	sp2 = sp1;
 }
 
+void TestSharedPtr3()
+{
+	SharedPtr<int> sp1(new int);
+	// 代码中所有资源都是采用delete方式进行释放
+	// 正确释放方式：根据资源的类型去释放
+	// 析构资源时，析构方式必须灵活
+	// 解决办法：使用仿函数，配置删除器
+	SharedPtr<int, Free<int>> sp2((int*)malloc(sizeof(int)));
+	SharedPtr<FILE, FClose> sp3(fopen("1.txt", "w"));
+}
+
 int main()
 {
 	TestSharedPtr1();
