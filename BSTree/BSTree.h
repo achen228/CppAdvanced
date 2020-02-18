@@ -217,3 +217,40 @@ private:
 private:
 	Node* _pRoot;
 };
+
+
+// ***将二叉搜索树转换为排序的双向链表
+//void _BSTreeTwoDList(Node* pRoot, Node*& prev)
+//{
+//	if (nullptr == pRoot)
+//	{
+//		return;
+//	}
+//
+//	_BSTreeTwoDList(pRoot->_pLeft, prev);
+//	pRoot->_pLeft = prev;
+//	if (prev)
+//	{
+//		prev->_pRight = pRoot;
+//	}
+//	prev = pRoot;
+//	_BSTreeTwoDList(pRoot->_pRight, prev);
+//}
+//
+//Node* BSTreeTwoDList(Node* pRoot)
+//{
+//	if (nullptr == pRoot)
+//	{
+//		return nullptr;
+//	}
+//	// 获取链表的第一个结点
+//	Node* pHead = pRoot;
+//	while (pHead->_Left)
+//	{
+//		pHead = pHead->_pLeft;
+//	}
+//
+//	Node* prev = nullptr; // 保存刚刚遍历过的结点
+//	_BSTreeTwoDList(pRoot，prev);
+//	return pHead;
+//}
